@@ -37,11 +37,11 @@ function callImages() {
     type: "GET",
     dataType: "jsonp",
     cache: false,
-    url: "https://api.instagram.com/v1/media/search?lat=" + coordinates[0] + "&lng=" + coordinates[1] + "&distance=5000&client_id=ecc35f29ced04e06ab5ef5f75f8202b8",
+    url: "https://api.instagram.com/v1/media/search?lat=" + coordinates[0] + "&lng=" + coordinates[1] + "&distance=5000&client_id=a52ce03fac284bea85b8d604bdff38a9",
     success: function(data) {
-      if (data.data.length >= 5) {
-        for (var i = 0; i < data.data.length; i++) {
-          $("#pics").append("<img class='insta' src='" + data.data[i].images.low_resolution.url + "'></img>");
+      if (data.length >= 5) {
+        for (var i = 0; i < data.length; i++) {
+          $("#pics").append("<img class='insta' src='" + data[i].images.low_resolution.url + "'></img>");
           $("#pics").show();
           $("#loader").removeClass("loading");
         }
