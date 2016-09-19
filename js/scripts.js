@@ -37,7 +37,7 @@ function callImages() {
     type: "GET",
     dataType: "jsonp",
     cache: false,
-    url: "https://api.instagram.com/v1/media/search?lat=" + coordinates[0] + "&lng=" + coordinates[1] + "&distance=5000&client_id=a52ce03fac284bea85b8d604bdff38a9",
+    url: "https://api.instagram.com/v1/media/search?lat=" + coordinates[0] + "&lng=" + coordinates[1] + "&distance=5000&access_token=1105628072.a52ce03.cfa082e1f3254d759f24c3144fab0b79",
     success: function(data) {
       if (data.length >= 5) {
         for (var i = 0; i < data.length; i++) {
@@ -60,6 +60,10 @@ function deletePreviousMarker() {
     markersArray.length = 0;
   }
 }
+
+
+//todo: change this to oregon only for testing.
+
 
 function randomLatLng() {
   var bounds = {
